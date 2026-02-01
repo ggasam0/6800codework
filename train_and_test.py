@@ -9,7 +9,7 @@ def _parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Train and test classifiers on UCI datasets.")
     parser.add_argument(
         "--dataset",
-        choices=["iris", "congress", "monks1", "monks2", "monks3"],
+        choices=["iris", "congress", "monks1", "monks2", "monks3", "all"],
         default="iris",
         help="Dataset to use.",
     )
@@ -48,16 +48,23 @@ def _load_dataset(dataset: str, training_ratio: float):
 
 def main() -> None:
     args = _parse_args()
-    training_data, test_data = _load_dataset(args.dataset, args.training_ratio)
-    classifier = Classifier(
-        args.classifier,
-        learning_rate=args.learning_rate,
-        epochs=args.epochs,
-        max_depth=args.max_depth,
-        min_samples_split=args.min_samples_split,
+    datasets = (
+        ["iris", "congress", "monks1", "monks2", "monks3"]
+        if args.dataset == "all"
+        else [args.dataset]
     )
-    classifier.train(training_data)
-    classifier.test(test_data)
+    for dataset in datasets:
+        print(f"\n=== Dataset: {dataset} | Classifier: {args.classifier} ===")
+        training_data, test_data = _load_dataset(dataset, args.training_ratio)
+        classifier = Classifier(
+            args.classifier,
+            learning_rate=args.learning_rate,
+            epochs=args.epochs,
+            max_depth=args.max_depth,
+            min_samples_split=args.min_samples_split,
+        )
+        classifier.train(training_data)
+        classifier.test(test_data)
 
 
 if __name__ == "__main__":
