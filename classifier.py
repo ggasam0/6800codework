@@ -19,18 +19,22 @@ def _compute_metrics(y_true: np.ndarray, y_pred: np.ndarray) -> dict[str, float]
     accuracy = float(np.mean(y_true == y_pred))
     precision_scores = []
     recall_scores = []
+    f1_scores = []
     for cls in classes:
         true_positive = np.sum((y_true == cls) & (y_pred == cls))
         false_positive = np.sum((y_true != cls) & (y_pred == cls))
         false_negative = np.sum((y_true == cls) & (y_pred != cls))
         precision = true_positive / (true_positive + false_positive + 1e-12)
         recall = true_positive / (true_positive + false_negative + 1e-12)
+        f1 = 2 * precision * recall / (precision + recall + 1e-12)
         precision_scores.append(precision)
         recall_scores.append(recall)
+        f1_scores.append(f1)
     return {
         "accuracy": accuracy,
         "precision": float(np.mean(precision_scores)),
         "recall": float(np.mean(recall_scores)),
+        "f1": float(np.mean(f1_scores)),
     }
 
 
@@ -44,7 +48,8 @@ def _is_discrete_feature(values: np.ndarray, max_unique: int = 12) -> bool:
 def _print_metrics(prefix: str, metrics: dict[str, float]) -> None:
     print(
         f"{prefix} accuracy={metrics['accuracy']:.4f} "
-        f"precision={metrics['precision']:.4f} recall={metrics['recall']:.4f}"
+        f"precision={metrics['precision']:.4f} recall={metrics['recall']:.4f} "
+        f"f1={metrics['f1']:.4f}"
     )
 
 

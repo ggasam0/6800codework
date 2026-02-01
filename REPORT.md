@@ -1,7 +1,8 @@
 # Classification Report Template
 
 Use this template to summarize performance on each dataset and classifier.
-Replace the placeholders with measured values.
+Replace the placeholders with measured values. Include at least three metrics
+(accuracy, precision, recall, and/or F1 are suggested).
 
 ## Metrics Summary
 

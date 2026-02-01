@@ -8,7 +8,7 @@
 - **逻辑回归**，采用softmax多分类优化。
 - **决策树**，使用基本的CART分裂器和基尼不纯度。
 
-每个分类器都支持训练、预测和评估，并在训练集和测试集上输出准确率、精确率和召回率等指标。
+每个分类器都支持训练、预测和评估，并在训练集和测试集上输出准确率、精确率、召回率与 F1（macro）等指标。
 
 ### 数据集加载器 (load_data.py)
 提供以下数据集的加载辅助函数：
@@ -27,8 +27,13 @@
 python train_and_test.py --dataset iris --classifier naive_bayes
 python train_and_test.py --dataset congress --classifier logistic_regression --epochs 800
 python train_and_test.py --dataset monks1 --classifier decision_tree --max_depth 5
+python train_and_test.py --dataset all --classifier naive_bayes
 ```
 
 ## 报告
 
 请为每个数据集和分类器生成一份报告（建议为PDF），内容包括性能指标（如准确率、精确率、召回率、F1等）。`REPORT.md` 提供了基本模板以供参考。
+
+## 已知问题
+
+暂无已知 bug。如果你发现异常表现，请在报告中说明复现实验、调参或排查的步骤。
