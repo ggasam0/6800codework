@@ -1,49 +1,46 @@
-# Classification Report Template
+# 分类报告
 
-Use this template to summarize performance on each dataset and classifier.
-Replace the placeholders with measured values. Include at least three metrics
-(accuracy, precision, recall, and/or F1 are suggested).
+以下结果为测试集指标（accuracy、precision、recall、F1），数值来自用户运行日志。
 
-## Metrics Summary
+## 指标汇总
 
 ### Iris
-| Classifier | Accuracy | Precision (macro) | Recall (macro) | F1 (macro) |
+| 分类器 | Accuracy | Precision | Recall | F1 |
 | --- | --- | --- | --- | --- |
-| Naïve Bayes | TBD | TBD | TBD | TBD |
-| Logistic Regression | TBD | TBD | TBD | TBD |
-| Decision Tree | TBD | TBD | TBD | TBD |
+| 朴素贝叶斯 | 0.9556 | 0.9556 | 0.9608 | 0.9554 |
+| 逻辑回归 | 0.9556 | 0.9556 | 0.9608 | 0.9554 |
+| 决策树 | 0.9556 | 0.9556 | 0.9608 | 0.9554 |
 
 ### Congressional Voting Records
-| Classifier | Accuracy | Precision (macro) | Recall (macro) | F1 (macro) |
+| 分类器 | Accuracy | Precision | Recall | F1 |
 | --- | --- | --- | --- | --- |
-| Naïve Bayes | TBD | TBD | TBD | TBD |
-| Logistic Regression | TBD | TBD | TBD | TBD |
-| Decision Tree | TBD | TBD | TBD | TBD |
+| 朴素贝叶斯 | 0.9237 | 0.9224 | 0.9260 | 0.9233 |
+| 逻辑回归 | 0.9466 | 0.9455 | 0.9468 | 0.9461 |
+| 决策树 | 0.9084 | 0.9179 | 0.9014 | 0.9060 |
 
 ### MONK’s Problems
 
 #### MONK-1
-| Classifier | Accuracy | Precision (macro) | Recall (macro) | F1 (macro) |
+| 分类器 | Accuracy | Precision | Recall | F1 |
 | --- | --- | --- | --- | --- |
-| Naïve Bayes | TBD | TBD | TBD | TBD |
-| Logistic Regression | TBD | TBD | TBD | TBD |
-| Decision Tree | TBD | TBD | TBD | TBD |
+| 朴素贝叶斯 | 0.6528 | 0.6607 | 0.6528 | 0.6484 |
+| 逻辑回归 | 0.6597 | 0.6600 | 0.6597 | 0.6596 |
+| 决策树 | 0.8333 | 0.8375 | 0.8333 | 0.8328 |
 
 #### MONK-2
-| Classifier | Accuracy | Precision (macro) | Recall (macro) | F1 (macro) |
+| 分类器 | Accuracy | Precision | Recall | F1 |
 | --- | --- | --- | --- | --- |
-| Naïve Bayes | TBD | TBD | TBD | TBD |
-| Logistic Regression | TBD | TBD | TBD | TBD |
-| Decision Tree | TBD | TBD | TBD | TBD |
+| 朴素贝叶斯 | 0.6157 | 0.4870 | 0.4928 | 0.4674 |
+| 逻辑回归 | 0.6458 | 0.5124 | 0.5044 | 0.4609 |
+| 决策树 | 0.6898 | 0.6577 | 0.6683 | 0.6610 |
 
 #### MONK-3
-| Classifier | Accuracy | Precision (macro) | Recall (macro) | F1 (macro) |
+| 分类器 | Accuracy | Precision | Recall | F1 |
 | --- | --- | --- | --- | --- |
-| Naïve Bayes | TBD | TBD | TBD | TBD |
-| Logistic Regression | TBD | TBD | TBD | TBD |
-| Decision Tree | TBD | TBD | TBD | TBD |
+| 朴素贝叶斯 | 0.9722 | 0.9722 | 0.9737 | 0.9722 |
+| 逻辑回归 | 0.7963 | 0.7982 | 0.7985 | 0.7963 |
+| 决策树 | 0.8981 | 0.8997 | 0.9004 | 0.8981 |
 
-## Notes
+## 备注
 
-- Provide any debugging notes or known issues here.
-- If there are known bugs, include steps attempted to debug them.
+- 本次仅更新测试集指标；训练集指标未写入报告。
