@@ -28,12 +28,11 @@ python train_and_test.py --dataset iris --classifier naive_bayes
 python train_and_test.py --dataset congress --classifier logistic_regression --epochs 800
 python train_and_test.py --dataset monks1 --classifier decision_tree --max_depth 5
 python train_and_test.py --dataset all --classifier naive_bayes
+python train_and_test.py --dataset all --classifier logistic_regression --epochs 800
+python train_and_test.py --dataset all --classifier decision_tree --max_depth 5
 ```
 
 ## 报告
 
 请为每个数据集和分类器生成一份报告（建议为PDF），内容包括性能指标（如准确率、精确率、召回率、F1等）。`REPORT.md` 提供了基本模板以供参考。
 
-## 已知问题
-
-暂无已知 bug。如果你发现异常表现，请在报告中说明复现实验、调参或排查的步骤。
