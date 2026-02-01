@@ -36,3 +36,8 @@ python train_and_test.py --dataset all --classifier decision_tree --max_depth 5
 
 请为每个数据集和分类器生成一份报告（建议为PDF），内容包括性能指标（如准确率、精确率、召回率、F1等）。`REPORT.md` 提供了基本模板以供参考。
 
+可以使用脚本自动生成报告：
+
+```bash
+python generate_report.py --output report.md
+```
