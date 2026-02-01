@@ -105,7 +105,7 @@ def load_monks(data_set_number):
     training = None
     for line in f.readlines():
         data = line.split(' ')
-        vector = [int(i) for i in data[1:-1]]
+        vector = [int(data[0])] + [int(i) for i in data[1:-1]]
         vector = np.array(vector)
         if training is None:
             training = vector
@@ -117,12 +117,12 @@ def load_monks(data_set_number):
     test = None
     for line in f.readlines():
         data = line.split(' ')
-        vector = [int(i) for i in data[1:-1]]
+        vector = [int(data[0])] + [int(i) for i in data[1:-1]]
         vector = np.array(vector)
         if test is None:
             test = vector
         else:
-            test = np.vstack((training, vector))
+            test = np.vstack((test, vector))
     
     return (training, test)
 
